@@ -100,21 +100,21 @@ function log(input: string) {
 function getInput(): number | string {
     return "log"
 }
-let input=getInput()
+let input = getInput()
 log(input as string);
 // 等效于
 log(<string>input);
 
-type Dialog={
-    id?:string
 // 非空断言--！
+type Dialog = {
+    id?: string
 }
-let dialog:Dialog = {
-    id:'string'
+let dialog: Dialog = {
+    id: 'string'
 }
-if(!dialog.id){
+if (!dialog.id) {
     console.log("!!!!")
-}else {
+} else {
     console.log(dialog.id);
 }
 
@@ -122,7 +122,7 @@ if(!dialog.id){
 let id!:string// ts无法通过静态方法知晓id已被赋值--使用明确赋值断言告诉ts，读取id时已经为其赋值
 addId()
 console.log(id.toUpperCase())
-function addId(){
-    id="id"
+function addId() {
+    id = "id"
 }
 
