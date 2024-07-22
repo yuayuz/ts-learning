@@ -107,7 +107,7 @@ console.log(`one${one},two${two},rest${rest}`)
 
 
 // 调用签名（类型签名）
-// 表示 sum 的类型----（a:number,b:number）=》number
+// 表示 sum 的类型----（a:number,b:number）=>number
 // 类型签名值包含类型层面的代码，只有类型没有值
 type Sum = (a: number, b: number) => void
 

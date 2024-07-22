@@ -60,7 +60,7 @@ d = {
     2: "ts-3"
 }
 console.log(d)
-// [key:T]:U 可以告诉 Ts 指定的对象可能有更多的键；键的类型（T）必须可赋值给 number 或者 string；
+// [key:T]:U 可以告诉 ts 指定的对象可能有更多的键；键的类型（T）必须可赋值给 number 或者 string；
 // 键的名称可以使用任何词不一定是 key
 
 
@@ -72,7 +72,7 @@ type Person1 = {
     name: string,
     age: Age
 }
-// Ts 无法推导类型别名，因此要显式注解
+// ts 无法推导类型别名，因此要显式注解
 let age1: Age = 55
 let driver: Person1 = {
     name: "小明",
@@ -100,7 +100,7 @@ let f1:[number]=[1]
 let f2:[number,string,number]=[123,"小明",15]
 
 // 只读数组和元组
-// Ts 原生支持只读数组类型，用于创建不可变数组
+// ts 原生支持只读数组类型，用于创建不可变数组
 // readonly,Readonly,ReadonlyArray
 let f3: readonly number[]=[1,2,3,4,5]
 let f4:readonly [string,string]=["1","2"];
@@ -124,8 +124,8 @@ enum language{
 // 使用点号或者方括号表示法访问
 console.log(language.Chinese);
 console.log(language["English"]);
-console.log(language[3]); // language[ts-3]不存在，但是 TS 不会阻止；可以使用 const enum 指定枚举的安全子集
-// 枚举可以分开声明，成员的值可以计算出（ TS 尽可能推导缺少的值）
+console.log(language[3]); // language[ts-3]不存在，但是 ts 不会阻止；可以使用 const enum 指定枚举的安全子集
+// 枚举可以分开声明，成员的值可以计算出（ ts 尽可能推导缺少的值）
 // 枚举的值可以为字符串，甚至混用字符串和数字
 
 
