@@ -1,6 +1,6 @@
 // number
 
-// const让ts推导出的值是某个具体数字
+// const 让 ts 推导出的值是某个具体数字
 const num1 = 100
 // 处理较长的数字是，为了便于分辨，建议使用数字分隔符
 
@@ -10,13 +10,13 @@ console.log(oneMillion)
 // 结构化类型--一种编程设计风格，只关心对象有那些属性而不管属性使用什么名称（名义化类型）
 
 // 对象
-// 把一个值声明为object类型(只需要一个对象，但是对对象字段没有要求时使用)
+// 把一个值声明为 object 类型(只需要一个对象，但是对对象字段没有要求时使用)
 let a: object = {
     b: "x"
-} // 无法对b进行操作
+} // 无法对 b 进行操作
 
 // 对象字面里量！！！！
-let a1: { b1: number } = {  // 可以让ts推导对象结构，也可以在花括号中明确描述
+let a1: { b1: number } = {  // 可以让 ts 推导对象结构，也可以在花括号中明确描述
     b1: 12
 }
 console.log(a1)
@@ -37,7 +37,7 @@ class Person {
     }
 }
 
-c = new Person("matt", "smith") // c与Person结构一样，因此允许将Person的实例赋值给c
+c = new Person("matt", "smith") // c 与 Person 结构一样，因此允许将 Person 的实例赋值给c
 console.log(c)
 
 // 属性可选，多个属性
@@ -60,8 +60,8 @@ d = {
     2: "ts-3"
 }
 console.log(d)
-// [key:T]:U可以告诉Ts指定的对象可能有更多的键；键的类型（T）必须可赋值给number或者string；
-// 键的名称可以使用任何词不一定是key
+// [key:T]:U 可以告诉 Ts 指定的对象可能有更多的键；键的类型（T）必须可赋值给 number 或者 string；
+// 键的名称可以使用任何词不一定是 key
 
 
 // 类型别名
@@ -72,7 +72,7 @@ type Person1 = {
     name: string,
     age: Age
 }
-// Ts无法推导类型别名，因此要显式注解
+// Ts 无法推导类型别名，因此要显式注解
 let age1: Age = 55
 let driver: Person1 = {
     name: "小明",
@@ -93,14 +93,14 @@ let e2 = ["1","2","ts-3","4","5","6","7","8","9"];
 let e3=["1",2,3]  // 数组应该保持同质
 
 // 元组
-// 元组是array的子类性，是定义数组的一种特殊方式，长度固定且个索引位上的值具有固定的已知类型
+// 元组是 array 的子类性，是定义数组的一种特殊方式，长度固定且个索引位上的值具有固定的已知类型
 // ！！声明元组时必须显示注解类型
 // 支持可选类型
 let f1:[number]=[1]
 let f2:[number,string,number]=[123,"小明",15]
 
 // 只读数组和元组
-// Ts原生支持只读数组类型，用于创建不可变数组
+// Ts 原生支持只读数组类型，用于创建不可变数组
 // readonly,Readonly,ReadonlyArray
 let f3: readonly number[]=[1,2,3,4,5]
 let f4:readonly [string,string]=["1","2"];
@@ -124,8 +124,8 @@ enum language{
 // 使用点号或者方括号表示法访问
 console.log(language.Chinese);
 console.log(language["English"]);
-console.log(language[3]); // language[ts-3]不存在，但是TS不会阻止；可以使用const enum指定枚举的安全子集
-// 枚举可以分开声明，成员的值可以计算出（TS尽可能推导缺少的值）
+console.log(language[3]); // language[ts-3]不存在，但是 TS 不会阻止；可以使用 const enum 指定枚举的安全子集
+// 枚举可以分开声明，成员的值可以计算出（ TS 尽可能推导缺少的值）
 // 枚举的值可以为字符串，甚至混用字符串和数字
 
 

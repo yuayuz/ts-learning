@@ -30,12 +30,12 @@ class piece {
 // abstract：抽象
 
 // super
-// super调用父类中的同名方法--方法调用和构造函数调用（只能访问父类的方法，不能访问父类的属性）
+// super 调用父类中的同名方法--方法调用和构造函数调用（只能访问父类的方法，不能访问父类的属性）
 
-// 以this为返回类型
+// 以 this 为返回类型
 // this：1、用作值；2、用作类型；3、注解方法的返回类型
 // 方法需要返回当前类的实例，其子类需要返回子类实例；但显示标注返回实例失去了继承基类的意义
-// 解决：使用this注解返回类型
+// 解决：使用 this 注解返回类型
 
 // 接口
 // 类型别名和接口算是同一概念的两种句式，两者可以相互赋值
@@ -56,15 +56,15 @@ interface foodI extends food2 {
 
 // 区别：
 // 1、类型别名更加通用，右边可以时任何类型；接口声明中，右边必须为结构
-// 扩展接口时，ys将检查扩展的接口是否可赋值给被扩展接口
+// 扩展接口时，ys 将检查扩展的接口是否可赋值给被扩展接口
 // 同一作用域中多个同名接口会自动合并（声明合并--1、两个接口不能有冲突；2、泛型要使用为完全相同的方式声明），接口会导致编译时错误
 
 // 实现
 
-// 声明类和四，使用implements知名该类满足某个接口
+// 声明类和四，使用 implements 知名该类满足某个接口
 
 interface A {
-    a: string // 可以声明属性，但是不能带有可见性修饰符，不能使用static；可以使用readonly
+    a: string // 可以声明属性，但是不能带有可见性修饰符，不能使用 static；可以使用 readonly
     logA(): void
 }
 
@@ -80,11 +80,11 @@ let aa = new a()
 console.log(aa.a)
 
 // 接口或扩展抽象类
-// 如果多各类共用一个实现，使用抽象类；如果需要一种轻量的方法表示“这个类是T性”，使用接口
+// 如果多各类共用一个实现，使用抽象类；如果需要一种轻量的方法表示“这个类是 T 性”，使用接口
 
 // 类是结构化类型
 // ts根据结构比较类，与类的名称无关；如果常规对象也定义了相同结构，也与类兼容
-// 若类中有使用private或者protected修饰的字符，而且结构不是类的类或者子类实例时，结构便不能赋值给类
+// 若类中有使用 private 或者 protected 修饰的字符，而且结构不是类的类或者子类实例时，结构便不能赋值给类
 
 // 类、枚举即声明类型也声明值
 class B {
@@ -92,7 +92,7 @@ class B {
 
 let b: B = new B
 
-// 类会在类型层面，生成代表类的实例和代表类的构造方法（通过typeof实现）
+// 类会在类型层面，生成代表类的实例和代表类的构造方法（通过 typeof 实现）
 enum C {D, E}
 
 let c: C = C.E
@@ -116,9 +116,9 @@ f.log([1,2,3],{1:1,2:2,3:3})
 // 可以有构造方法（调用顺序与混入类的顺序一致）
 
 // 装饰器--在装饰目标上调用函数的一种句法
-// ts没有内置任何装饰器，只能自己实现或者npm安装
+// ts 没有内置任何装饰器，只能自己实现或者npm安装
 
-// ts不支持final，可模拟
+// ts 不支持 final，可模拟
 
 // 工厂模式-创建某种类型对象的一种方式，把创建那种类型交给创建该对象的工厂决定
 
@@ -155,10 +155,10 @@ class RequestBuilder {
     private  url: string|null=null
     private data:object | null = null
     private method:'get'|'post'|'put'|'delete'|null=null
-    // 私有变量，初始值为null
+    // 私有变量，初始值为 null
     setMethod (method:'get'|'post'|'put'|'delete'|null):this {
         this.method=method
-        return this  // 返回this，RequestBuilder实例
+        return this  // 返回this，RequestBuilder 实例
     }
 
     setData (data:object | null):this {
